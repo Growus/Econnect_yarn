@@ -1,7 +1,13 @@
-import { StyleSheet } from 'react-native';
+import styled from 'styled-components/native';
 
-const styles = StyleSheet.create({
+export const Screen = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  background-color: rosybrown;
+`;
 
-});
-
-export default styles;
+export const Text = styled.Text`
+  font-size: 24px;
+  color: #333;
+`;

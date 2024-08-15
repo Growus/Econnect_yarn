@@ -1,11 +1,14 @@
 import React from 'react';
-// import styles from '../styles/MainStyle';
+import * as M from '../styles/MainStyle';
 
 const MainScreen = () => {
-    return (
-        <></>
-    );
+  return (
+    <>
+      <M.Screen>
+        <M.Text>예시</M.Text>
+      </M.Screen>
+    </>
+  );
 };
 
 export default MainScreen;
-
