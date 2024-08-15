@@ -1,15 +1,8 @@
-import { StyleSheet } from 'react-native';
+import styled from 'styled-components/native';
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    text: {
-        fontSize: 30,
-        fontWeight: 'bold',
-    },
-});
-
-export default styles;
+export const Screen = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+`;
