@@ -1,11 +1,11 @@
 import React from 'react';
-import {SafeAreaView, Text, Button} from 'react-native';
-import styles from '../styles/StartStyle';
+import {Text, Button} from 'react-native';
+import * as S from '../styles/StartStyle';
 
-const StartScreen = ({navigation}) => {
+const StartScreen = () => {
   return (
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.text}>Main Screen</Text>
+    <S.StyledSafeAreaView>
+      <Text>Main Screen</Text>
       <Button
         title="Go to Login"
         onPress={() => navigation.navigate('Login')}
@@ -14,7 +14,7 @@ const StartScreen = ({navigation}) => {
         title="Go to Signup"
         onPress={() => navigation.navigate('Signup')}
       />
-    </SafeAreaView>
+    </S.StyledSafeAreaView>
   );
 };
 
