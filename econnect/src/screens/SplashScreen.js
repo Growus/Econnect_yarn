@@ -21,10 +21,7 @@ const SplashScreenE = () => {
           width: animationWidth,
           height: animationHeight,
         }}
-        source={require('../assets/lottie/splash.json')}
-        autoPlay
-        loop
-      />
+        source={require('../assets/lottie/splash.json')} autoPlay loop />
     </S.Screen>
   );
 };
