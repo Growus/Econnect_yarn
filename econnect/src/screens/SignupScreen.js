@@ -3,10 +3,12 @@ import * as S from '../styles/SignupStyle';
 
 const SignupScreen = ({ navigation }) => {
     return (
-        <S.SignupScreen>
+        <S.Screen>
             <S.Text>회원가입 페이지</S.Text>
-            <S.Button title="로그인하러 가기" onPress={() => navigation.navigate('Login')} />
-        </S.SignupScreen>
+            <S.Button onPress={() => navigation.navigate('Login')}>
+                <S.ButtonText>로그인하러 가기</S.ButtonText>
+            </S.Button>
+        </S.Screen>
     );
 };
 

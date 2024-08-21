@@ -2,7 +2,7 @@ import React from 'react';
 import {Text, Button} from 'react-native';
 import * as S from '../styles/StartStyle';
 
-const StartScreen = () => {
+const StartScreen = ({ navigation }) => {
   return (
     <S.StyledSafeAreaView>
       <Text>시작 페이지</Text>
