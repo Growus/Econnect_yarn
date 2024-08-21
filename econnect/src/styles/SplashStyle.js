@@ -1,10 +1,10 @@
 import styled from 'styled-components/native';
-import {SafeAreaView} from 'react-native';
 import palette from '../lib/styles/colorPalette';
 
-export const StyledSafeAreaView = styled(SafeAreaView)`
+export const Screen = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
-  background-color: ${palette.backGreen};
+  height: 100%;
+  background-color: ${palette.mainGreen};
 `;
