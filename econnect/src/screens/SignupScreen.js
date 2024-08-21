@@ -1,13 +1,12 @@
 import React from 'react';
-import { View, Text, Button } from 'react-native';
-import styles from '../styles/SignupStyle';
+import * as S from '../styles/SignupStyle';
 
 const SignupScreen = ({ navigation }) => {
     return (
-        <View style={styles.container}>
-        <Text style={styles.text}>Signup Screen</Text>
-        <Button title="Go to Login" onPress={() => navigation.navigate('Login')} />
-        </View>
+        <S.SignupScreen>
+            <S.Text>회원가입 페이지</S.Text>
+            <S.Button title="로그인하러 가기" onPress={() => navigation.navigate('Login')} />
+        </S.SignupScreen>
     );
 };
 

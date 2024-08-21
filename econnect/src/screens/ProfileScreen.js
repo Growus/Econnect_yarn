@@ -1,9 +1,11 @@
 import React from 'react';
-// import styles from '../styles/ProfileStyle';
+import * as P from '../styles/ProfileStyle';
 
 const ProfileScreen = () => {
     return (
-        <></>
+        <P.Screen>
+            <P.Text>회원정보수정</P.Text>
+        </P.Screen>
     );
 };
 

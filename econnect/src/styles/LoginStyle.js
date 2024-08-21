@@ -1,7 +1,7 @@
-import { StyleSheet } from 'react-native';
+import styled from 'styled-components/native';
 
-const styles = StyleSheet.create({
+export const Screen = styled.View``;
 
-});
+export const Text = styled.Text``;
 
-export default styles;
+export const Button = styled.Button``;

@@ -5,7 +5,7 @@ const MainScreen = () => {
   return (
     <>
       <M.Screen>
-        <M.Text>예시</M.Text>
+        <M.Text>메인페이지</M.Text>
       </M.Screen>
     </>
   );

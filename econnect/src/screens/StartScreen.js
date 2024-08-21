@@ -1,14 +1,13 @@
 import React from 'react';
-import { View, Text, Button } from 'react-native';
-import styles from '../styles/StartStyle';
+import * as S from '../styles/StartStyle';
 
 const StartScreen = ({ navigation }) => {
     return (
-        <View style={styles.container}>
-        <Text style={styles.text}>Main Screen</Text>
-        <Button title="Go to Login" onPress={() => navigation.navigate('Login')} />
-        <Button title="Go to Signup" onPress={() => navigation.navigate('Signup')} />
-        </View>
+        <S.Screen>
+            <S.Text>Main Screen</S.Text>
+            <S.Button title="로그인" onPress={() => navigation.navigate('Login')} />
+            <S.Button title="회원가입" onPress={() => navigation.navigate('Signup')} />
+        </S.Screen>
     );
 };
 

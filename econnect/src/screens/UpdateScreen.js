@@ -1,9 +1,11 @@
 import React from 'react';
-// import styles from '../styles/UpdateStyle';
+import * as U from '../styles/UpdateStyle';
 
 const UpdateScreen = () => {
     return (
-        <></>
+        <U.Screen>
+            <U.Text>식물 수정 페이지</U.Text>
+        </U.Screen>
     );
 };
 
