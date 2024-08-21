@@ -17,30 +17,42 @@ import ChangePWScreen from '../screens/ChangePWScreen';
 import SettingScreen from '../screens/SettingScreen';
 import ARScreen from '../screens/ARScreen';
 
+import palette from '../lib/styles/colorPalette';
+
 const Stack = createNativeStackNavigator();
 
 const AppNavigator = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Start">
-        <Stack.Screen
-          name="Start"
-          component={StartScreen}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen name="Login" component={LoginScreen} />
-        <Stack.Screen name="FindPW" component={FindPWScreen} />
-        <Stack.Screen name="Signup" component={SignupScreen} />
-        <Stack.Screen name="Main" component={MainScreen} />
-        <Stack.Screen name="List" component={ListScreen} />
-        <Stack.Screen name="Detail" component={DetailScreen} />
-        <Stack.Screen name="Post" component={PostScreen} />
-        <Stack.Screen name="Update" component={UpdateScreen} />
-        <Stack.Screen name="User" component={UserScreen} />
-        <Stack.Screen name="Profile" component={ProfileScreen} />
-        <Stack.Screen name="ChangePW" component={ChangePWScreen} />
-        <Stack.Screen name="Setting" component={SettingScreen} />
-        <Stack.Screen name="AR" component={ARScreen} />
+      <Stack.Navigator
+        initialRouteName="Start"
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: palette.backGreen,
+          },
+          headerTitleStyle: {
+            fontFamily: 'Pretendard-SemiBold',
+            fontSize: 17,
+            color: palette.black,
+          },
+          headerTintColor: palette.mainGreen,
+          headerBackTitleVisible: false,
+          headerShadowVisible: false,
+        }}>
+        <Stack.Screen name="Start" component={StartScreen} options={{headerShown: false}} />
+        <Stack.Screen name="Login" component={LoginScreen} options={{title: '로그인'}} />
+        <Stack.Screen name="FindPW" component={FindPWScreen} options={{title: '비밀번호 찾기'}} />
+        <Stack.Screen name="Signup" component={SignupScreen} options={{title: '회원가입'}} />
+        <Stack.Screen name="Main" component={MainScreen} options={{headerShown: false}} />
+        <Stack.Screen name="List" component={ListScreen} options={route => ({title: `닉네임의 정원`})} />
+        <Stack.Screen name="Detail" component={DetailScreen} options={route => ({title: `다육이`})} />
+        <Stack.Screen name="Post" component={PostScreen} options={{title: '식물 등록'}} />
+        <Stack.Screen name="Update" component={UpdateScreen} options={{title: '정보 수정'}} />
+        <Stack.Screen name="User" component={UserScreen} options={{title: '마이페이지'}} />
+        <Stack.Screen name="Profile" component={ProfileScreen} options={{title: '회원 정보 수정'}} />
+        <Stack.Screen name="ChangePW" component={ChangePWScreen} options={{title: '비밀번호 변경'}}  />
+        <Stack.Screen name="Setting" component={SettingScreen} options={{title: '푸시 알림 설정'}} />
+        <Stack.Screen  name="AR" component={ARScreen} options={{headerShown: false}} />
       </Stack.Navigator>
     </NavigationContainer>
   );
