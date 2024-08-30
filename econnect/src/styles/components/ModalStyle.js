@@ -35,7 +35,6 @@ export const Text = styled(RegularText)`
   color: ${palette.black};
   font-size: 18px;
   text-align: center;
-  line-height: normal;
 `;
 
 // 버튼 스타일
