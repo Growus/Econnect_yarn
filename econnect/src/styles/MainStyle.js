@@ -1,13 +1,67 @@
 import styled from 'styled-components/native';
+import palette from '../lib/styles/colorPalette';
+import { RegularText, SemiBoldText } from '../components/CustomText';
 
-export const Screen = styled.View`
+import Plant from '../assets/img/plant.svg';
+
+export const Screen = styled.SafeAreaView`
   flex: 1;
-  justify-content: center;
   align-items: center;
-  background-color: rosybrown;
+  background-color: ${palette.backGreen};
 `;
 
-export const Text = styled.Text`
-  font-size: 24px;
-  color: #333;
+export const Top = styled.View`
+  width: 352px;
+  height: 126px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  background-color: ${palette.white};
+`;
+
+export const Image = styled(Plant)`
+  width: 57px;
+  height: 57px;
+  justify-content: center;
+  align-items: center;
+  margin-right: 14px;
+`;
+
+export const Text = styled.View`
+
+`;
+
+export const Title = styled(SemiBoldText)`
+  color: ${palette.black};
+  font-size: 22px;
+`;
+
+export const Contents = styled(RegularText)`
+  color: ${palette.black};
+  font-size: 16px;
+`;
+
+export const Plants = styled.View`
+`;
+
+export const PTitle = styled(SemiBoldText)`
+  color: ${palette.black};
+  font-size: 30px;
+  padding-top: 40px;
+  padding-right: 50%;
+`;
+
+export const Slick = styled.View`
+
+`;
+
+export const Menu = styled.View`
+`;
+
+export const MTitle = styled(SemiBoldText)`
+  color: ${palette.black};
+  font-size: 30px;
+  padding-top: 40px;
+  padding-right: 65%;
 `;
