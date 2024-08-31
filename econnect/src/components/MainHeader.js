@@ -32,7 +32,6 @@ const Header = styled.View`
     align-items: center;
     padding: 12px 26px;
     justify-content: space-between;
-    margin-bottom: 32px;
 `;
 
 const LeftBox = styled.View`

@@ -10,6 +10,18 @@ export const Screen = styled.SafeAreaView`
   background-color: ${palette.backGreen};
 `;
 
+export const ScrollView = styled.ScrollView`
+  flex: 1;
+  width: 100%;
+`;
+
+export const ContentContainer = styled.View`
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  margin-top: 32px;
+`;
+
 export const Top = styled.View`
   width: 352px;
   height: 126px;
@@ -50,6 +62,7 @@ export const PTitle = styled(SemiBoldText)`
   font-size: 30px;
   padding-top: 40px;
   padding-right: 50%;
+  margin-bottom: 12.3px;
 `;
 
 export const Slick = styled.View`
@@ -57,6 +70,7 @@ export const Slick = styled.View`
 `;
 
 export const Menu = styled.View`
+  margin-bottom: 31px;
 `;
 
 export const MTitle = styled(SemiBoldText)`
@@ -64,4 +78,5 @@ export const MTitle = styled(SemiBoldText)`
   font-size: 30px;
   padding-top: 40px;
   padding-right: 65%;
+  margin-bottom: 16px;
 `;

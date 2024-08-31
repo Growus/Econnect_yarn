@@ -44,6 +44,7 @@ const AppNavigator = () => {
         <Stack.Screen name="Login" component={LoginScreen} options={{title: '로그인'}} />
         <Stack.Screen name="FindPW" component={FindPWScreen} options={{title: '비밀번호 찾기'}} />
         <Stack.Screen name="Signup" component={SignupScreen} options={{title: '회원가입'}} />
+        <Stack.Screen name="Tab" component={TabScreen} options={{ headerShown: false }} />
         {/* <Stack.Screen name="Main" component={MainScreen} options={{headerShown: false}} />
         <Stack.Screen name="List" component={ListScreen} options={route => ({title: `닉네임의 정원`})} />
         <Stack.Screen name="Detail" component={DetailScreen} options={route => ({title: `다육이`})} />
@@ -54,7 +55,6 @@ const AppNavigator = () => {
         <Stack.Screen name="ChangePW" component={ChangePWScreen} options={{title: '비밀번호 변경'}}  />
         <Stack.Screen name="Setting" component={SettingScreen} options={{title: '푸시 알림 설정'}} />
         <Stack.Screen  name="AR" component={ARScreen} options={{headerShown: false}} /> */}
-        <Stack.Screen name="Tab" component={TabScreen} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
