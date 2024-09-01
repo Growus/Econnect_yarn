@@ -4664,6 +4664,7 @@ __metadata:
     react: "npm:18.2.0"
     react-native: "npm:0.74.4"
     react-native-gesture-handler: "npm:^2.18.1"
+    react-native-image-picker: "npm:^7.1.2"
     react-native-safe-area-context: "npm:^4.10.8"
     react-native-screens: "npm:^3.34.0"
     react-native-splash-screen: "npm:^3.3.0"
@@ -8612,6 +8613,16 @@ __metadata:
     react: "*"
     react-native: "*"
   checksum: 10/d97cb20ed32c58a66c21a53727ce22cb7ece104bea296b72f4a95a3b3b61d03561e46b437f818603bcc58518dc5cd5bd42aaddb9755fb9eca467ce45358d4765
+  languageName: node
+  linkType: hard
+
+"react-native-image-picker@npm:^7.1.2":
+  version: 7.1.2
+  resolution: "react-native-image-picker@npm:7.1.2"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: 10/8c3ab5b5fb7c1e55af20b7c98b1074c417136a3c8f30b80459a5ccadc7173a59e464fe2c38b21f624515b59f25e212602443a54f04c7facf6f626b3a220d9596
   languageName: node
   linkType: hard
 
