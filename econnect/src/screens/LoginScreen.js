@@ -13,7 +13,7 @@ const LoginScreen = ({navigation}) => {
     console.log('Email:', email);
     console.log('Password:', password);
     // 여기에 로그인 API 호출 등을 추가할 수 있습니다.
-    navigation.navigate('Main');
+    navigation.navigate('Tab');
   };
 
   return (
