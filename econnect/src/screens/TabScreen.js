@@ -15,6 +15,8 @@ import UpdateScreen from '../screens/UpdateScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import ChangePWScreen from '../screens/ChangePWScreen';
 import SettingScreen from '../screens/SettingScreen';
+import WebViewNoticeScreen from '../screens/WebViewNoticeScreen';
+import WebViewQNAScreen from '../screens/WebViewQNAScreen';
 
 import palette from '../lib/styles/colorPalette';
 
@@ -76,6 +78,16 @@ const MyStackScreen = () => (
       name="Setting"
       component={SettingScreen}
       options={{title: '푸시 알림 설정'}}
+    />
+    <MyStack.Screen
+      name="WebViewNotice"
+      component={WebViewNoticeScreen}
+      options={{title: '공지사항'}}
+    />
+    <MyStack.Screen
+      name="WebViewQNA"
+      component={WebViewQNAScreen}
+      options={{title: '문의'}}
     />
   </MyStack.Navigator>
 );

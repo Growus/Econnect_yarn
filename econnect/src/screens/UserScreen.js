@@ -25,11 +25,11 @@ const UserScreen = () => {
   };
 
   const handleNotice = () => {
-    console.log('노션 페이지로 이동 예정');
+    navigation.navigate('WebViewNotice');
   };
 
   const handleQNA = () => {
-    console.log('노션 페이지로 이동 예정');
+    navigation.navigate('WebViewQNA');
   };
 
   const handleLogout = () => {
