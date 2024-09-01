@@ -28,15 +28,15 @@ export const LogoImg = styled(Logo)`
 
 export const InputGap = styled.View`
   width: 100%;
-  height: 283px;
+  height: 353px;
   padding: 0 33px;
-  gap: 32px;
+  gap: 20px;
 `;
 
 export const ButtonGap = styled.View`
   width: 100%;
   padding: 0 33px;
   align-items: center;
-  margin-top: 82px;
+  margin-top: 58px;
   margin-bottom: 20px;
 `;
