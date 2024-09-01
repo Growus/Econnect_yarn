@@ -42,15 +42,41 @@ const GardenStackScreen = () => (
 );
 
 const MyStackScreen = () => (
-  <MyStack.Navigator>
+  <MyStack.Navigator
+    screenOptions={{
+      headerStyle: {
+        backgroundColor: palette.backGreen,
+      },
+      headerTitleStyle: {
+        fontFamily: 'Pretendard-SemiBold',
+        fontSize: 17,
+        color: palette.black,
+      },
+      headerTintColor: palette.mainGreen,
+      headerBackTitleVisible: false,
+      headerShadowVisible: false,
+    }}>
     <MyStack.Screen
       name="My"
       component={UserScreen}
-      options={{headerShown: false}}
+      options={{title: '마이페이지'}}
+      // options={{headerShown: false}}
     />
-    <MyStack.Screen name="Profile" component={ProfileScreen} />
-    <MyStack.Screen name="ChangePW" component={ChangePWScreen} />
-    <MyStack.Screen name="Setting" component={SettingScreen} />
+    <MyStack.Screen
+      name="Profile"
+      component={ProfileScreen}
+      options={{title: '회원 정보 수정'}}
+    />
+    <MyStack.Screen
+      name="ChangePW"
+      component={ChangePWScreen}
+      options={{title: '비밀번호 변경'}}
+    />
+    <MyStack.Screen
+      name="Setting"
+      component={SettingScreen}
+      options={{title: '푸시 알림 설정'}}
+    />
   </MyStack.Navigator>
 );
 
@@ -119,6 +145,7 @@ const TabNavigation = () => {
         component={MyStackScreen} // MyStackScreen 사용
         options={{
           title: '마이페이지',
+          headerShown: false,
           tabBarLabel: ({focused}) => (
             <MediumText style={getTabBarLabelStyle(focused)}>My</MediumText>
           ),
