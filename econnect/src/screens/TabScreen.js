@@ -31,16 +31,41 @@ const getTabBarLabelStyle = focused => ({
 });
 
 const GardenStackScreen = () => (
-  <GardenStack.Navigator>
-    <GardenStack.Screen
-      name="Garden"
-      component={ListScreen}
-      options={{headerShown: false}}
-    />
-    <GardenStack.Screen name="Detail" component={DetailScreen} />
-    <GardenStack.Screen name="Post" component={PostScreen} />
-    <GardenStack.Screen name="Update" component={UpdateScreen} />
-  </GardenStack.Navigator>
+    <GardenStack.Navigator
+        screenOptions={{
+            headerStyle: {
+            backgroundColor: palette.backGreen,
+            },
+            headerTitleStyle: {
+            fontFamily: 'Pretendard-SemiBold',
+            fontSize: 17,
+            color: palette.black,
+            },
+            headerTintColor: palette.mainGreen,
+            headerBackTitleVisible: false,
+            headerShadowVisible: false,
+        }}>
+        <GardenStack.Screen
+            name="Garden"
+            component={ListScreen}
+            options={{title: '닉네임의 정원', headerLeft: () => null,}}
+        />
+        <GardenStack.Screen
+            name="Detail"
+            component={DetailScreen}
+            options={{title: '다육이'}}
+        />
+        <GardenStack.Screen
+            name="Post"
+            component={PostScreen}
+            options={{title: '식물 등록'}}
+        />
+        <GardenStack.Screen
+            name="Update"
+            component={UpdateScreen}
+            options={{title: '정보 수정'}}
+        />
+    </GardenStack.Navigator>
 );
 
 const MyStackScreen = () => (
@@ -61,7 +86,7 @@ const MyStackScreen = () => (
     <MyStack.Screen
       name="My"
       component={UserScreen}
-      options={{title: '마이페이지'}}
+      options={{title: '마이페이지', headerLeft: () => null,}}
       // options={{headerShown: false}}
     />
     <MyStack.Screen
@@ -132,7 +157,7 @@ const TabNavigation = () => {
         name="Garden"
         component={GardenStackScreen} // GardenStackScreen 사용
         options={{
-          title: `닉네임의 정원`,
+          headerShown: false,
           tabBarLabel: ({focused}) => (
             <MediumText style={getTabBarLabelStyle(focused)}>Garden</MediumText>
           ),
