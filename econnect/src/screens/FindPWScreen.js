@@ -8,6 +8,7 @@ import Modal from '../components/Modal';
 
 const FindPWScreen = ({navigation}) => {
   const [email, setEmail] = useState('');
+  const [number, setNumber] = useState('');
   const [password, setPassword] = useState('');
   const [repassword, setRepassword] = useState('');
 
@@ -16,6 +17,7 @@ const FindPWScreen = ({navigation}) => {
   const handlePW = () => {
     // 로그인 버튼을 눌렀을 때 실행할 로직
     console.log('Email:', email);
+    console.log('Number:', number);
     console.log('Password:', password);
     console.log('Repassword:', repassword);
     // 여기에 로그인 API 호출 등을 추가할 수 있습니다.
@@ -25,6 +27,10 @@ const FindPWScreen = ({navigation}) => {
   const handleEmail = () => {
     console.log('이메일 인증');
     setModalVisible(true);
+  };
+
+  const handleNumber = () => {
+    console.log('번호 입력');
   };
 
   return (
@@ -39,6 +45,14 @@ const FindPWScreen = ({navigation}) => {
             onChangeText={setEmail} // email 상태 업데이트
             btnLabel="전송"
             btnOnpress={handleEmail}
+          />
+          <InputBoxBtn
+            label="Certification Number"
+            placeholder="인증번호를 입력하세요."
+            value={number}
+            onChangeText={setNumber} //number 상태 업데이트
+            btnLabel="확인"
+            btnOnpress={handleNumber}
           />
           <InputBox
             label="RESET-PASSWORD"
