@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import * as L from '../styles/LoginStyle';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import RNFetchBlob from 'rn-fetch-blob';
 
 import InputBox from '../components/InputBox';
 import CustomButton from '../components/CustomButton';
@@ -9,11 +11,46 @@ const LoginScreen = ({navigation}) => {
   const [password, setPassword] = useState('');
 
   const handleLogin = () => {
-    // 로그인 버튼을 눌렀을 때 실행할 로직
     console.log('Email:', email);
     console.log('Password:', password);
-    // 여기에 로그인 API 호출 등을 추가할 수 있습니다.
-    navigation.navigate('Tab');
+
+    // 로그인 API 호출
+    RNFetchBlob.fetch(
+      'POST',
+      `http://54.180.227.239:8080/api/auth/login`,
+      {
+        'Content-Type': 'application/json',
+      },
+      JSON.stringify({
+        email: email,
+        password: password,
+      }),
+    )
+      .then(response => {
+        // JSON 응답 파싱
+        return response.json();
+      })
+      .then(responseJson => {
+        if (responseJson.isSuccess) {
+          console.log('로그인 성공:', responseJson.message);
+
+          // token을 AsyncStorage에 저장
+          AsyncStorage.setItem('token', responseJson.result.token)
+            .then(() => {
+              console.log('Token 저장 성공: ', responseJson.result.token);
+              // 로그인 성공 후 이동
+              navigation.navigate('Tab');
+            })
+            .catch(error => {
+              console.error('Token 저장 실패:', error.message);
+            });
+        } else {
+          console.log('로그인 실패:', responseJson.message);
+        }
+      })
+      .catch(error => {
+        console.error('로그인 요청 실패:', error.message);
+      });
   };
 
   return (

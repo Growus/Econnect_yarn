@@ -1,6 +1,8 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import * as U from '../styles/UserStyle';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import RNFetchBlob from 'rn-fetch-blob';
 
 import MypageBtn from '../components/MypageButton';
 import defaultImg from '../assets/img/econnect_default.png';
@@ -8,9 +10,45 @@ import defaultImg from '../assets/img/econnect_default.png';
 const UserScreen = () => {
   const navigation = useNavigation();
   const [imgSource, setImgSource] = useState(defaultImg);
-  const [level, setLevel] = useState('0');
+  const [level, setLevel] = useState('1');
   const [nickname, setNickname] = useState('에코넥트');
-  const [message, sesMessage] = useState('상태 메시지를 입력해주세요.');
+  const [message, setMessage] = useState('상태 메시지를 입력해주세요.');
+
+  // 사용자 정보 조회
+  const fetchUserInfo = async () => {
+    try {
+      const token = await AsyncStorage.getItem('token');
+      if (token) {
+        const response = await RNFetchBlob.fetch(
+          'GET',
+          `http://54.180.227.239:8080/api/my-page`,
+          {
+            Authorization: `Bearer ${token}`,
+            'Content-Type': 'application/json',
+          },
+        );
+
+        const responseData = JSON.parse(response.data);
+
+        if (responseData.isSuccess) {
+          const {profileImage, nickname, stateMessage} = responseData.result;
+
+          setImgSource(profileImage ? {uri: profileImage} : defaultImg);
+          setNickname(nickname || '에코넥트');
+          setMessage(stateMessage || '상태 메시지를 입력해주세요.');
+        } else {
+          console.error('사용자 정보 조회 실패:', responseData.message);
+        }
+      }
+    } catch (error) {
+      console.error('사용자 정보 조회 요청 실패:', error.message);
+    }
+  };
+
+  // 컴포넌트가 마운트될 때 사용자 정보 조회
+  useEffect(() => {
+    fetchUserInfo();
+  }, []);
 
   const handleProfile = () => {
     navigation.navigate('Profile');
@@ -32,14 +70,24 @@ const UserScreen = () => {
     navigation.navigate('WebViewQNA');
   };
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
     // 로그아웃 구현 (token 삭제 등)
-    navigation.navigate('Start');
+    try {
+      await AsyncStorage.removeItem('token');
+      navigation.navigate('Start');
+    } catch (error) {
+      console.error('로그아웃 실패:', error.message);
+    }
   };
 
-  const handleWithdraw = () => {
+  const handleWithdraw = async () => {
     // 탈퇴 구현 (token 삭제, API 연동 등)
-    navigation.navigate('Start');
+    try {
+      await AsyncStorage.removeItem('token');
+      navigation.navigate('Start');
+    } catch (error) {
+      console.error('회원탈퇴 실패:', error.message);
+    }
   };
 
   return (
