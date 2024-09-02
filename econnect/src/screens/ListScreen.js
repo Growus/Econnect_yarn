@@ -14,6 +14,9 @@ const ListScreen = () => {
                     <PlantCard name='다육이' plant='테라코타' date='2024.3.14' onPress={() => navigation.navigate('Detail')} />
                 </L.Container>
             </L.ScrollView>
+            <L.FloatingButton onPress={() => navigation.navigate('Post')}>
+                <L.BtnImg/>
+            </L.FloatingButton>
         </L.Screen>
     );
 };
