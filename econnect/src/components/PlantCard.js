@@ -1,10 +1,10 @@
 import React from 'react';
 import * as P from '../styles/components/PlantCardStyle';
 
-const PlantCard = ({name, plant, date, onPress}) => {
+const PlantCard = ({name, plant, image, date, onPress}) => {
     return (
         <P.Card onPress={onPress}>
-            <P.Img/>
+            <P.Img source={image ? { uri: image } : null}/>
             <P.Label>
                 <P.Name>{name}</P.Name>
                 <P.Plant>{plant}</P.Plant>

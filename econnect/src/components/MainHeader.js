@@ -7,14 +7,12 @@ import { RegularText, SemiBoldText } from '../components/CustomText';
 import NotificationImg from '../assets/img/notification.svg';
 import NotificationDotImg from '../assets/img/notification_dot.svg';
 
-const ARScreen = () => {
-    const nickname = "ECONNECT";
-
+const MainHeader = ({ nickname, profileImage }) => {
     return (
         <Header>
             <LeftBox>
                 <ProfileBox>
-                    <Profile/>
+                    <Profile source={profileImage ? { uri: profileImage } : null} />
                 </ProfileBox>
                 <Greet>Hello, <Name>{nickname}</Name></Greet>
             </LeftBox>
@@ -23,7 +21,7 @@ const ARScreen = () => {
     );
 };
 
-export default ARScreen;
+export default MainHeader;
 
 const Header = styled.View`
     width: 100%;
